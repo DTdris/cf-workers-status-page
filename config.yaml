@@ -1,6 +1,6 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://ghstatuspage.it-042.workers.dev/' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
@@ -15,25 +15,42 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: main-site # unique identifier
+    name: www.diamondtours.com
+    description: 'Bringing group travel to a higher standard' # default=empty
+    url: 'https://www.diamondtours.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: gtcom
+    name: www.grouptrips.com
+    description: ''
+    url: 'https://www.grouptrips.com/'
     method: GET
     expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+    linkable: false # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: travelconfident
+    name: Travel Confident
+    description: 'Help put your mind at ease on the next trip'
+    url: 'https://www.travelconfident.com/'
     method: GET
     expectStatus: 200
+  - id: int-guac # unique identifier
+    name: g.dtcorp.com
+    description: 'Internal Guacamole' # default=empty
+    url: 'https://g.dtcorp.com/guacamole/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+  - id: ext-guac # unique identifier
+    name: g2.dtcorp.com
+    description: 'External Guacamole' # default=empty
+    url: 'https://g2.dtcorp.com/guacamole/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
