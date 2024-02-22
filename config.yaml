@@ -16,41 +16,56 @@ settings:
 
 monitors:
   - id: main-site # unique identifier
-    name: www.diamondtours.com
-    description: 'Bringing group travel to a higher standard' # default=empty
+    name: Diamond Tours
+    description: 'Primary Website' # default=empty
     url: 'https://www.diamondtours.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
 
   - id: gtcom
-    name: www.grouptrips.com
+    name: Group Trips
     description: ''
     url: 'https://www.grouptrips.com/'
     method: GET
     expectStatus: 200
-    linkable: false # allows the title to be a link, default=true
+    linkable: true # allows the title to be a link, default=true
 
   - id: travelconfident
     name: Travel Confident
-    description: 'Help put your mind at ease on the next trip'
+    description: ''
     url: 'https://www.travelconfident.com/'
     method: GET
     expectStatus: 200
+    linkable: true
+
+  - id: dtsurvey
+    name: Diamond Tours Survey
+    url: 'https://www.dtsurvey.com/'
+
   - id: int-guac # unique identifier
-    name: g.dtcorp.com
+    name: Internal Guacamole
     description: 'Internal Guacamole' # default=empty
     url: 'https://g.dtcorp.com/guacamole/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
+
   - id: ext-guac # unique identifier
-    name: g2.dtcorp.com
+    name: External Guacamole
     description: 'External Guacamole' # default=empty
     url: 'https://g2.dtcorp.com/guacamole/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
+  - id: dtexternal
+    name: Extranet
+    description: 'Authelia'
+    url: 'https://dtexternal.diamondtours.net/'
+    method: GET
+    expectedStatus: 200
+    followRedirect: true
+    linkable: true
