@@ -64,7 +64,7 @@ monitors:
   - id: dtexternal
     name: Extranet
     description: 'Authelia'
-    url: 'https://dtexternal.diamondtours.net/'
+    url: 'https://authelia.diamondtours.net/'
     method: GET
     expectedStatus: 200
     followRedirect: true
